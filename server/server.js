@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors")
 const db = require('./db')
 const express = require('express');
 const morgan = require('morgan');
@@ -6,6 +7,10 @@ const app = express();
 
 // middleware
 app.use(morgan('dev'));
+
+// Two different domains (backend and forntend) bydefault can't talk to each other, we need cors middleware to make that possible.
+app.use(cors());
+
 // middleware for post request to retrieve data request from frontend (attach it under the property called body)
 app.use(express.json());
 
@@ -19,7 +24,6 @@ app.use(express.json());
 app.get('/api/v1/restaurants', async (req, res) => {
   try {
     const results = await db.query("select * from restaurants");
-    console.log(results);
     res.status(200).json({
       status: 'success',
       results: results.rows.length,
