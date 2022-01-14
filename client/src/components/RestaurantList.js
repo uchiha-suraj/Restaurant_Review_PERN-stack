@@ -13,7 +13,9 @@ const RestaurantList = (props) => {
       try {
         const response = await RestaurantFinder.get('/');
         setRestaurants(response.data.data.restaurants);
-      } catch (err) {}
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     fetchData();

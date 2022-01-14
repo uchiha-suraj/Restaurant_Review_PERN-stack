@@ -7,8 +7,8 @@ import UpdatePage from './routes/UpdatePage';
 const App = () => {
   return (
     <RestaurantsContextProvider>
-      <div className = 'bg-info' style = {{height: '100%'}}>
-      <div className = 'container bg-dark' style = {{height: '100vh'}}>
+      <div className = '' style = {{height: '100%'}}>
+      <div className = 'container ' style = {{height: '100vh'}}>
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
