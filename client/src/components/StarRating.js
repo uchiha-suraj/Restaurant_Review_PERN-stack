@@ -1,21 +1,22 @@
-import React from 'react'
+import React from 'react';
+import StarIcon from '@material-ui/icons/Star';
+import StarOutlineIcon from '@material-ui/icons/StarOutline';
+import StarHalfIcon from '@material-ui/icons/StarHalf';
 
 const StarRating = ({ rating }) => {
-
+  //rating =4
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
-      stars.push(<i className="fas fa-star text-warning"></i>);
+      stars.push(<i key={i} className="text-warning"><StarIcon /></i>);
     } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
-      stars.push(<i key={i} className="fas fa-star-half-alt text-warning"></i>);
+      stars.push(<i key={i} className="text-warning"><StarHalfIcon /></i>);
     } else {
-      stars.push(<i className="far fa-star text-warning"></i>);
+      stars.push(<i key={i} className="text-warning"><StarOutlineIcon /></i>);
     }
   }
+  return <>{stars}</>;
+};
 
-  return (
-    <>{stars}</>
-  )
-}
+export default StarRating;
 
-export default StarRating

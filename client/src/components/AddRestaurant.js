@@ -50,6 +50,7 @@ const AddRestaurant = () => {
             className=' col-12 custom-select my-1 mr-sm-2'
             value = {priceRange}
             onChange = {(e) => setPriceRange(e.target.value)}
+            style = {{cursor: 'pointer'}}
             >
               <option disabled>Price Range</option>
               <option value="1">$</option>

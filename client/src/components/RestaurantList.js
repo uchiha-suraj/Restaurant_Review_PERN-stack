@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import RestaurantFinder from '../apis/RestaurantFinder';
 import { RestaurantsContext } from '../context/RestaurantsContext';
+import StarRating from "./StarRating";
 
 const RestaurantList = (props) => {
 
@@ -38,9 +39,22 @@ const RestaurantList = (props) => {
     history.push(`/restaurants/${id}/update`);
   }
 
-  const handleSelect = (id) => {
-    history.push(`/restaurants/${id}`)
-  }
+  const handleRestaurantSelect = (id) => {
+    history.push(`/restaurants/${id}`);
+  };
+
+  const renderRating = (restaurant) => {
+    if (!restaurant.count) {
+      return <span className="text-warning">0 reviews</span>;
+    }
+    {console.log('restaurant ==> ', restaurant)}
+    return (
+      <>
+        <StarRating rating={restaurant.average_rating} />
+        <span className="text-warning ml-1">({restaurant.count})</span>
+      </>
+    );
+  };
 
   return (
     <div className = 'list-group'>
@@ -59,14 +73,15 @@ const RestaurantList = (props) => {
           {restaurants && restaurants.map((restaurant) => {
             return (
               <tr
-                onClick={() => handleSelect(restaurant.id)} 
+                onClick={() => handleRestaurantSelect(restaurant.id)} 
                 className="bg-secondary" 
                 key = {restaurant.id}
+                style = {{cursor: 'pointer'}}
               >
                 <td className='text-white'>{restaurant.name}</td>
                 <td className='text-white'>{restaurant.location}</td>
                 <td className='text-white'>{'$'.repeat(restaurant.price_range)}</td> 
-                <td className='text-white'>Rating</td>
+                <td className='text-white'>{renderRating(restaurant)}</td>
                 <td>
                   <button 
                     className="btn btn-warning"

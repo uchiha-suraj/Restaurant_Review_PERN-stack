@@ -24,8 +24,10 @@ const RestaurantdetailPage = () => {
     };
 
     fetchData();
-    console.log('selectedRestaurant.reviews', selectedRestaurant)
   }, []);
+
+  
+  console.log('selectedRestaurant.reviews ===> ', selectedRestaurant)
 
   return (
     <div>
@@ -44,7 +46,7 @@ const RestaurantdetailPage = () => {
             </span>
           </div>
           <div className="mt-3">
-            {/* <Reviews reviews = {4} /> */}
+            <Reviews reviews={selectedRestaurant.reviews} />
           </div>
           <AddReview />
         </>

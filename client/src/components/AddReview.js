@@ -23,6 +23,8 @@ const AddReview = () => {
         review: reviewText,
         rating,
       });
+      console.log('response ==> ', response);
+      history.push("/");
       history.push(location.pathname);
     } catch (err) {
       console.log(err);
@@ -44,13 +46,14 @@ const AddReview = () => {
               className = "form-control" 
             />
           </div>
-          <div className="form-group col-4">
+          <div className="form-group col-4" style = {{marginTop: '10px'}}>
             <label htmlFor="name">Rating</label>
             <select
               value = {rating}
               onChange = {(e) => setRating(e.target.value)}
               id = 'rating'
               className = 'custom-select' 
+              style = {{marginLeft: '30px', cursor: 'pointer'}}
             >
               <option disabled>Rating</option>
               <option value = "1">1</option>
@@ -74,6 +77,7 @@ const AddReview = () => {
           type = "submit"
           className = "btn btn-primary"
           onClick = {handleSubmitReview}
+          style = {{marginTop: '10px'}}
         >
           Submit
         </button>
