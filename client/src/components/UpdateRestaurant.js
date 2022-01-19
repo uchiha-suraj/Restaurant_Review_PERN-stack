@@ -41,7 +41,7 @@ const UpdateRestaurant = () => {
     <div>
       <form action = "">
         <div className = 'form-group'>
-          <label htmalFor = "name" className='text-white'>Name</label>
+          <label htmalFor = "name" className='text-white' style = {{fontSize: "25px"}}>Name</label>
           <input 
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -52,7 +52,7 @@ const UpdateRestaurant = () => {
         </div>
         <div className="form-group" 
           style = {{marginTop: '15px'}}>
-          <label htmlFor="location" className='text-white'>Location</label>
+          <label htmlFor="location" className='text-white' style = {{fontSize: "25px"}}>Location</label>
           <input
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -63,7 +63,7 @@ const UpdateRestaurant = () => {
         </div>
         <div className="form-group" 
           style = {{marginTop: '15px'}}>
-          <label htmlFor="price_range" className='text-white'>Price Range</label>
+          <label htmlFor="price_range" className='text-white' style = {{fontSize: "25px"}}>Price Range</label>
           <input
             value={priceRange}
             onChange={(e) => setPriceRange(e.target.value)}

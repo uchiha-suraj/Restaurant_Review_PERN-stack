@@ -35,8 +35,8 @@ const AddReview = () => {
     <div className="mb-2">
       <form action = "">
         <div className="from-row">
-          <div className="form-group col-8">
-            <label htmlFor="name">Name</label>
+          <div className="form-group col-8 text-light">
+            <label htmlFor="name" style = {{fontSize: "25px"}}>Name</label>
             <input 
               value = {name}
               onChange = {(e) => setName(e.target.value)}
@@ -46,8 +46,8 @@ const AddReview = () => {
               className = "form-control" 
             />
           </div>
-          <div className="form-group col-4" style = {{marginTop: '10px'}}>
-            <label htmlFor="name">Rating</label>
+          <div className="form-group col-4 text-light" style = {{marginTop: '10px'}}>
+            <label htmlFor="name" style = {{fontSize: "25px"}}>Rating</label>
             <select
               value = {rating}
               onChange = {(e) => setRating(e.target.value)}
@@ -64,8 +64,8 @@ const AddReview = () => {
             </select>
           </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="name">Review</label>
+        <div className="form-group text-light">
+          <label htmlFor="name" style = {{fontSize: "25px"}}>Review</label>
           <textarea
             value = {reviewText}
             onChange = {(e) => setReviewText(e.target.value)}

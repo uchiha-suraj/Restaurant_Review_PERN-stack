@@ -76,7 +76,11 @@ const RestaurantList = (props) => {
                 onClick={() => handleRestaurantSelect(restaurant.id)} 
                 className="bg-secondary" 
                 key = {restaurant.id}
-                style = {{cursor: 'pointer'}}
+                style = {{
+                  cursor: 'pointer', 
+                  border: '1px solid black',
+                  opacity: '0.8'
+                }}
               >
                 <td className='text-white'>{restaurant.name}</td>
                 <td className='text-white'>{restaurant.location}</td>

@@ -33,7 +33,7 @@ const RestaurantdetailPage = () => {
     <div>
       {selectedRestaurant && (
         <>
-          <h1 className="text-center display-1">
+          <h1 className="text-center display-1 text-info">
             {selectedRestaurant.restaurant.name}
           </h1>
           <div className="text-center">
