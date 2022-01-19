@@ -9,9 +9,14 @@
 ## Key Features:
 
     🟢 We can add restaurant with It's Name, Location and Price range.
+    
     🟢 We can write Review and add star rating to a specific Restaurant. 
-    🟢 It will show us all the reviews and average rating of stars in our UI as well as name, location, price range and rating.
+    
+    🟢 It will show us all the reviews and average rating of stars in our UI as well as name, 
+       location, price range and rating.
+       
     🟢 Updation of existing Restaurant feature is also available.
+    
     🟢 Can delete a specific Restaurant.
     
    ### Build Showcase:
@@ -34,7 +39,8 @@
 
     🔷 Material-UI => I've used Material-UI for icons.
 
-    🔷 NodeJs & ExpressJs => To build the server for my Backend. I've used postgres queries to build the routes.
+    🔷 NodeJs & ExpressJs => To build the server for my Backend. I've used postgres queries to 
+       build the routes.
     
     🔷 postgresql => For backend Database.
 
